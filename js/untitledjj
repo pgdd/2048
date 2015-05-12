@@ -1,0 +1,32 @@
+
+  # mergeCells = (cells, direction) ->
+  #   value = cells
+
+  #   switch direction
+  #     when 'left', 'down'
+  #       for i in [0..3]
+  #         if value[i] == value[i+1]
+  #           value[i] = value[i]*2
+  #           value[i+1] = 0
+  #     when 'right', 'up'
+  #       for i in [3..0]
+  #         if value[i] == value[i+1]
+  #           value[i] = value[i]*2
+  #           value[i+1] = 0
+  #   value
+
+mergeCellsandcoll = (arraytomerge) ->
+    newAarray = [arraytomerge]
+    for value, i in arraytomerge
+      if value[i] == value[i+1]
+          value[i+1] = value[i+1] * 2
+          value[i] = 0
+    newArray = newArray.filter (x) -> x != 0
+    newArray
+
+console.log "mergeCells: " + mergeCellsandcoll([2,2,2,2], 'left')
+console.log "mergeCells: " + mergeCells([2,2,2,2], 'right')
+console.log "mergeCells: " + mergeCells([2,4,2,2], 'left')
+console.log "mergeCells: " + mergeCells([2,2,2,2], 'up')
+
+console.log 'test'

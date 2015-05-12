@@ -1,0 +1,23 @@
+
+
+class Grid
+  constructor: (@currentstep, @occupiedcellsisanarrayofarray, @numberofnumneronthegrid) ->
+    start : ->
+      genRandomLineOrColumn = (lower, upper) ->
+        [lower, upper] = [0, lower]     unless upper?           # Called with one argument
+        [lower, upper] = [upper, lower] if lower > upper        # Lower must be less then upper
+        Math.floor(Math.random() * (upper - lower + 1) + lower) # Last statement is a return value
+      genRandomValue = (lower, upper) ->
+        [lower, upper] = [1, lower]     unless upper?
+        [lower, upper] = [upper, lower] if lower > upper
+        Math.floor(Math.random() * (upper - lower + 1) + lower)
+
+      randomCol = genRandomLineOrColumn(4)
+      randomLine = genRandomLineOrColumn(4)
+      randomValue = genRandomValue(2) * 2
+      step = 0
+      newCell = [randomCol, randomLine, randomValue]
+      newCell.push
+      console.log (newCell)
+actualGrid = new Grid (step, [newCell], 1)
+console.log actualGrid.occupiedcellsisanarrayofarray

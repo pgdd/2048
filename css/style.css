@@ -4,7 +4,8 @@
 }
 
 body {
-  background: rgb(3,3,3);
+  background: rgb(255,255,255);
+  color: white;
   text-align: center;
 /*  font-family: "Clear Sans";*/
   font-family: "avenir";
@@ -26,17 +27,17 @@ h1 {
 }
 
 .board {
-  background-color: rgb(225,225,225);
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
+  background-color: rgb(255,255,255);
   border: 2px solid black;
   border-radius: 10px;
+  margin: 0 auto;
   padding: 5px;
+  width: 400px;
+  height: 400px;
 }
 
-.cell {
-  background-color: rgba(240,240,240,0.75);
+.board .cell {
+  background-color: rgba(0,0,240,0.75);
   width: 90px;
   height: 90px;
   float: left;
